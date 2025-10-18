@@ -1,0 +1,14 @@
+# Bỏ qua thư mục Visual Studio
+.vs/
+# Bỏ qua các file build
+bin/
+obj/
+# Bỏ file tạm và cache
+*.user
+*.suo
+*.vsidx
+*.db
+*.pdb
+*.cache
+*.log
+*.tmp

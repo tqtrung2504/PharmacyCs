@@ -1,0 +1,24 @@
+<Window x:Class="QuanLyHieuThuoc.frmTimDonBan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chọn đơn bán" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="lsvDonBan">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Mã đơn" Width="100" DisplayMemberBinding="{Binding IdDonBanHang}"/>
+                    <GridViewColumn Header="Ngày bán" Width="200" DisplayMemberBinding="{Binding NgayBan}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Width="80" Margin="0,0,10,0" Click="Chon">Chọn</Button>
+            <Button Width="80" Click="Dong">Đóng</Button>
+        </StackPanel>
+    </Grid>
+</Window>
+

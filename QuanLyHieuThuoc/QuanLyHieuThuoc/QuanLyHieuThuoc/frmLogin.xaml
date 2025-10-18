@@ -1,0 +1,145 @@
+﻿<Window x:Class="QuanLyHieuThuoc.frmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Đăng nhập vào hệ thống"
+        Height="550" Width="900"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="White"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        >
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="CafeBrown" Color="#4C86BD"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="437"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="White">
+            <Label Content="Pharmacy"
+                   HorizontalAlignment="Left"
+                   Margin="91,33,0,0"
+                   VerticalAlignment="Top"
+                   Height="76" Width="249"
+                   FontFamily="Times New Roman"
+                   FontSize="50"
+                   Foreground="{StaticResource CafeBrown}"
+                   FontWeight="Black"/>
+
+            <Label Content="Tài khoản:"
+                   HorizontalAlignment="Left"
+                   Margin="38,0,0,0"
+                   VerticalAlignment="Center"
+                   Width="160"
+                   FontSize="30"
+                   Foreground="{StaticResource CafeBrown}"
+                   FontFamily="Times New Roman"
+                   FontWeight="Bold"/>
+
+            <TextBox x:Name="txtTenDangNhap"
+                     HorizontalAlignment="Left"
+                     Margin="198,253,0,0"
+                     VerticalAlignment="Top"
+                     Width="212" Height="37"
+                     FontSize="20"
+                     TextAlignment="Left"
+                     TextChanged="txtTenDangNhap_TextChanged"
+                     TabIndex="0"/>
+
+            <Label Content="Mật khẩu:"
+                   HorizontalAlignment="Left"
+                   Margin="38,314,0,0"
+                   VerticalAlignment="Top"
+                   Width="160"
+                   FontSize="30"
+                   Foreground="{StaticResource CafeBrown}"
+                   FontFamily="Times New Roman"
+                   FontWeight="Bold"/>
+
+            <PasswordBox x:Name="txtMatKhau"
+                         HorizontalAlignment="Left"
+                         Margin="198,314,0,0"
+                         VerticalAlignment="Top"
+                         Width="212" Height="37"
+                         FontSize="20"
+                         TabIndex="1"/>
+
+            <Button x:Name="btnDangNhap"
+                    Content="Đăng nhập"
+                    HorizontalAlignment="Center"
+                    Margin="0,398,0,0"
+                    VerticalAlignment="Top"
+                    Width="135" Height="34"
+                    FontSize="23"
+                    FontFamily="Times New Roman"
+                    Foreground="White"
+                    Click="BtnDangNhap_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="{StaticResource CafeBrown}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DeepPink"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+
+        <Border Grid.Column="1" Background="{StaticResource CafeBrown}"/>
+
+        <Grid Grid.Column="2" Background="{StaticResource CafeBrown}">
+            <Label x:Name="lbthoat"
+                   Content="X"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Top"
+                   Width="40" Height="60"
+                   FontSize="36"
+                   FontWeight="Bold"
+                   MouseLeftButtonDown="lbThoat" Margin="0,-15,-9,0">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+
+            <Label Content="Pharmacy&#x0a;Management"
+                   HorizontalAlignment="Left"
+                   Margin="66,186,0,0"
+                   VerticalAlignment="Top"
+                   Height="134" Width="365"
+                   FontFamily="Times New Roman"
+                   FontSize="50"
+                   Foreground="White"
+                   FontWeight="Black"/>
+        </Grid>
+        <Image Source="/images/Medicine-Logo-Graphics-4647232-1-1-580x386-removebg-preview.png" Margin="116,58,128,328"/>
+    </Grid>
+</Window>
